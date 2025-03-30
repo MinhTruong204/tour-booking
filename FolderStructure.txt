@@ -1,0 +1,40 @@
+tour-booking/
+├── public/                 # Các file tĩnh (favicon, manifest, v.v.)
+│   ├── index.html
+│   └── assets/            # Hình ảnh, font, v.v.
+│       ├── images/
+│       └── fonts/
+├── src/                   # Thư mục nguồn chính
+│   ├── assets/            # Tài nguyên nội bộ (hình ảnh, JSON, v.v.)
+│   │   ├── images/
+│   │   └── data/         # Dữ liệu giả lập (JSON cho tours, destinations)
+│   ├── components/        # Các component tái sử dụng
+│   │   ├── common/       # Component chung (Button, Card, v.v.)
+│   │   │   ├── Button.js
+│   │   │   ├── Card.js
+│   │   │   └── Button.scss
+│   │   ├── layout/       # Component bố cục (Header, Footer, v.v.)
+│   │   │   ├── Header.js
+│   │   │   ├── Footer.js
+│   │   │   ├── Header.scss
+│   │   │   └── Footer.scss
+│   │   └── sections/     # Component cho các section cụ thể
+│   │       ├── Hero.js
+│   │       ├── SearchBar.js
+│   │       ├── TourList.js
+│   │       └── Hero.scss
+│   ├── pages/             # Các trang chính (Home, Tours, v.v.)
+│   │   ├── Home.js
+│   │   ├── Tours.js
+│   │   ├── Destinations.js
+│   │   ├── About.js
+│   │   ├── Contact.js
+│   │   └── Home.scss     # (Nếu cần kiểu riêng cho từng trang)
+│   ├── styles/            # File SASS toàn cục và biến
+│   │   ├── _variables.scss
+│   │   ├── _mixins.scss
+│   │   ├── globalStyle.scss # Bao gồm Normalize.css
+│   │   └── App.scss      # Kiểu tổng quát cho App
+│   ├── App.js             # Component gốc (Routing)
+│   ├── index.js           # Entry point
+│   └── routes.js          # (Tùy chọn) Cấu hình routing

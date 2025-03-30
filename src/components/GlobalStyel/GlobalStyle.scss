@@ -1,0 +1,20 @@
+@import './normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+*,h1,h2,h3,h4,h5,h6,p,ul,li,a,button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; // 1rem = 10px
+
+
+}
+body {
+    font-family: "Nunito", sans-serif;
+    font-size: 1.6rem; // 16px
+    line-height: 2.4rem; // 24px
+    background-color: #f4f4f4;
+}
