@@ -1,9 +1,7 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 
-
-
-import Header from './components/layouts/Header'
+import Header from './components/layouts/Header';
 import Home from './page/Home';
 import Tours from './page/Tours';
 function App() {
@@ -12,8 +10,9 @@ function App() {
             <div className="App">
                 <Header />
                 <Routes>
-                   <Route path="/" element={<Home />} />
-                   <Route path="/tours" element={<Tours />} />
+                    <Route path="/" element={<Navigate to="/home" replace />} />
+                    <Route path="/home" element={<Home />} />
+                    <Route path="/tours" element={<Tours />} />
                 </Routes>
             </div>
         </Router>

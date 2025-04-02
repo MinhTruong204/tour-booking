@@ -1,3 +1,5 @@
+@import '../../components/GlobalStyel/variables';
+
 $bannerHeight: 50rem;
 $brightness: 60%;
 $timeduration: 5s;
@@ -17,16 +19,21 @@ $timeduration: 5s;
     0% {
         filter: brightness(0%);
     }
-    25% {
-        filter: brightness($brightness);
-    }
-    75% {
+    50% {
         filter: brightness($brightness);
     }
     100% {
         filter: brightness(0%);
     }
 }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .banner {
     width: 100%;
     display: flex;
@@ -37,27 +44,109 @@ $timeduration: 5s;
     img {
         width: 100%;
         height: $bannerHeight;
-        object-fit:cover;
+        object-fit: cover;
         position: absolute;
         filter: brightness($brightness);
         z-index: -1;
-        animation : slideBanner $timeduration ease-in-out infinite ;
+        animation: slideBanner $timeduration ease-in-out infinite;
     }
-    h1 , p {
+    h1,
+    p {
         margin-bottom: 3rem;
         color: white;
-        
     }
-    h1{
-        font-size:5rem;
+    h1 {
+        font-size: 5rem;
         animation: slideFadeIn 2s ease-in-out;
     }
-    p{
-        font-weight:200;
+    p {
+        font-weight: 200;
         font-style: italic;
         opacity: 0;
         letter-spacing: 0.7rem;
         animation: slideFadeIn 2s 2s ease-in-out;
-        animation-fill-mode:forwards;
+        animation-fill-mode: forwards;
     }
+}
+
+.searchBar {
+    width: 100rem;
+    height: 10rem;
+    background-color: white;
+    border-radius: 10rem;
+    transform: translateY(-50%);
+    box-shadow: $boxShadow;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3rem;
+    ul {
+        display: flex;
+        flex-grow: 1;
+        justify-content: space-between;
+        li {
+            i {
+                color: $buttonColor;
+            }
+        }
+
+        .content {
+            select {
+                border-radius: 0.5rem;
+                background-color: white;
+                font-size: 1.3rem;
+                color: $mainTextColor;
+                cursor: pointer;
+                border: none;
+                outline: none;
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                box-shadow: $borderShadow;
+                border-radius: 0.5rem;
+                background-color: white;
+                font-size: 1.3rem;
+                color: $mainTextColor;
+                cursor: pointer;
+                li {
+                    height: 3rem;
+                    padding: 0 3rem;
+                    display: flex;
+                    align-items: center;
+                    &:hover {
+                        font-weight: bold;
+                        background-color: #f6f6f6;
+                    }
+                }
+            }
+        }
+    }
+    .searchButton {
+        background-color: $buttonColor;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        font-weight: 300;
+        padding: 1rem 3rem;
+        margin-left: 3rem;
+        border-radius: 5rem;
+        cursor: pointer;
+        box-shadow: $boxShadow;
+        transition: all 0.3s ease-in-out;
+        i {
+            padding-right: 1rem;
+            font-size: small;
+        }
+        &:hover {
+            background-color: $buttonColorHover;
+            box-shadow: $borderShadow;
+            transform: translateY(-2px);
+        }
+    }
+}
+
+.content {
 }
