@@ -4,6 +4,16 @@ $bannerHeight: 50rem;
 $brightness: 60%;
 $timeduration: 5s;
 
+@mixin themeTitle1 {
+    color: $themeColor2;
+    font-size: 1.2rem;
+}
+@mixin themeTitle2 {
+    padding-top: 1rem;
+    font-weight: 800;
+    font-size: 3rem;
+}
+
 @keyframes slideFadeIn {
     0% {
         opacity: 0;
@@ -25,6 +35,18 @@ $timeduration: 5s;
     100% {
         filter: brightness(0%);
     }
+}
+
+@keyframes slideTourCard {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    
 }
 
 .container {
@@ -132,7 +154,7 @@ $timeduration: 5s;
         font-weight: 300;
         padding: 1rem 3rem;
         margin-left: 3rem;
-        border-radius: 5rem;
+        border-radius: $buttonBorder;
         cursor: pointer;
         box-shadow: $boxShadow;
         transition: all 0.3s ease-in-out;
@@ -148,5 +170,47 @@ $timeduration: 5s;
     }
 }
 
-.content {
+
+
+.trendy {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    span {
+        @include themeTitle1;
+    }
+    h2 {
+        @include themeTitle2;
+    }
+    .header {
+        display: flex;
+        justify-content: space-between;
+    }
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 5rem;
+        .tourCard {
+            position: relative;
+            flex : 1 1 calc(33.333% );
+            padding: 1rem;
+            img {
+                width: 100%;
+                border-radius: $imageBoder;
+                height: 13rem;
+                object-fit: cover;
+            }
+            p {
+                position: absolute;
+                bottom: 3rem;
+                left: 3rem;
+                background-color: #fff;
+                padding: .5rem 2rem;
+                border-radius: $buttonBorder;
+                
+            }
+        }
+    }
 }
+
+

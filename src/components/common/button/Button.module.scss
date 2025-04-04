@@ -1,0 +1,32 @@
+@import '../../GlobalStyel//variables';
+
+
+.btn {
+        padding: 1rem;
+        color: white;
+        border: none;
+        border-radius:$buttonBorder;
+        font-weight: bold;
+        padding-left: 3rem;
+        :only-child {
+            margin-left: 3rem;
+        }
+        
+}
+.arrow {
+    // background-color: black;
+    color: #000;
+    background-color: #fff;
+    border-radius: 100%;
+    padding: .5rem;
+    margin-left: 1rem;
+
+}
+
+.theme1 {
+    background-color: $themeColor1;
+}
+.theme2 {
+    background-color: $themeColor2;
+}
+

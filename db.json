@@ -1,0 +1,45 @@
+{
+    "trendy": [
+        {
+            "id": 1,
+            "name": "Hạ Long Bay",
+            "image": "https://cdn.pixabay.com/photo/2016/10/16/17/03/vietnam-1745819_1280.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Phố cổ Hội An",
+            "image": "https://cdn.pixabay.com/photo/2018/10/04/17/08/the-lantern-3724092_960_720.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Phong Nha-Kẻ Bàng",
+            "image": "https://cdn.pixabay.com/photo/2023/07/04/10/20/river-8105970_1280.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Cố Đô Huế",
+            "image": "https://cdn.pixabay.com/photo/2020/03/08/13/22/hue-4912504_960_720.jpg"
+        },
+        {
+            "id": 5,
+            "name": "Cầu Vàng Đà Nẵng",
+            "image": "https://cdn.pixabay.com/photo/2019/12/21/17/24/golden-bridge-4710873_1280.jpg"
+        },
+        {
+            "id": 6,
+            "name": "Ruộng bậc thang Sa Pa",
+            "image": "https://cdn.pixabay.com/photo/2019/09/17/02/38/nature-4482349_1280.jpg"
+        },
+        
+        {
+            "id": 7,
+            "name": "Nha Trang Beach",
+            "image": "https://cdn.pixabay.com/photo/2018/10/19/09/17/travel-3758193_1280.jpg"
+        },
+        {
+            "id": 8,
+            "name": "Đỉnh Fansipan",
+            "image": "https://www.vietourist.com.vn/public/frontend/uploads/kceditor/images/06ba27cafdbc28e271ad.jpg"
+        }
+    ]
+}

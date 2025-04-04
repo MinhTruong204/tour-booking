@@ -1,5 +1,17 @@
 @import '../../GlobalStyel/variables';
 $height : 60px;
+.scrolled {
+    background-color:$themeColor2;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    a,
+    i {
+        &:hover {
+            cursor: pointer;
+            color: $textColorHover;
+        }
+        
+    }
+}
 .header {
     height: $height;
     width: 100%;
@@ -27,25 +39,21 @@ $height : 60px;
                 text-decoration: none;
                 color: white;
                 font-weight: 300;
-                padding-left: 30px;
                 &:hover {
                     cursor: pointer;
+                    color: $textColorHover;
                 }
+               
             }
-        }
-        .hoverBackground {
-            position: absolute;
-            // margin-left: 15rem;
-            // padding: 0 1rem;
-            height: 60%;
-            background-color: $backgroundColor; // Màu nền khi hover
-            border-radius: 5rem;
-            z-index: -1;
-            transition: left 0.3s ease, width 0.3s ease;
-
         }
     }
 }
 
 
 
+.active {
+    background-color: $backgroundColor;
+    padding: 1rem 2rem;
+    border-radius: $buttonBorder;
+    transition: left 0.3s ease, width 0.3s ease;
+}
