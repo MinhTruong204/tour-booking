@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import styles from './Home.module.scss';
-import banner1 from '../../assets/images/banner1.jpg';
-import banner2 from '../../assets/images/banner2.jpg';
-import banner3 from '../../assets/images/banner3.jpg';
+import banner1 from '../../assets/images/banner/banner1.jpg';
+import banner2 from '../../assets/images/banner/banner2.jpg';
+import banner3 from '../../assets/images/banner/banner3.jpg';
+import aboutImg from '../../assets/images/about-section-homepage.jpg';
 import Button from '../../components/common/button';
 import { fetchTours } from '../../api/tourAPI';
 
@@ -58,7 +59,7 @@ function Home() {
                 <p>Cùng bạn chinh phục mọi chân trời</p>
             </div>
             {/* Container */}
-            <div className={`${styles.container} container`}>
+            <div className={`${styles.container}`}>
                 {/* Search Bar */}
                 <div className={styles.searchBar}>
                     <ul>
@@ -169,7 +170,7 @@ function Home() {
                     </button>
                 </div>
                 {/* Trendy */}
-                <div className={styles.trendy}>
+                <div className={`${styles.trendy} container`}>
                     <div className={styles.header}>
                         <div>
                             <span>Điểm đến nổi tiếng</span>
@@ -185,6 +186,85 @@ function Home() {
                             <p >{tour.name}</p>
                         </div>
                         ))}
+                    </div>
+                </div>
+
+                {/* About */}
+                <div className={`${styles.about} container`}>
+                    <div className={`${styles['about-content']}`}>
+                        <div className={styles.imgage}>
+                            <img src={aboutImg}></img>
+                            <div className={styles.experienceBox}>
+                                <span>00+</span>
+                                Tháng kinh nghiệm
+                            </div>
+                        </div>
+                        <div className={styles.detail}>
+                            <span>Dịch vụ du lịch của chúng tôi</span>
+                            <h2>
+                                Cuộc phiêu lưu đáng nhớ của chúng tôi trên toàn
+                                thế giới
+                            </h2>
+                            <p>
+                                Chúng tôi cung cấp các điểm đến và các tour du
+                                lịch được quản lý cẩn thận để nắm bắt bản chất
+                                thực sự của vị trí, đảm bảo bạn trải nghiệm.
+                                Điểm thu hút của chúng tôi giúp bạn tiết kiệm
+                                nhiều hơn là mua vé cá nhân cho hệ thống gói
+                                tour của bạn.
+                            </p>
+                            <div className={styles.slogan}>
+                                "Đồng hành cùng bạn trên mọi nẻo đường, mang đến
+                                những hành trình trọn vẹn, lan tỏa niềm vui bất
+                                tận, kết nối yêu thương bền vững và khám phá vẻ
+                                đẹp vô tận của thế giới rộng lớn."
+                            </div>
+
+                            <div className={styles.benefits}>
+                                <ul>
+                                    <li>
+                                        <i class="fa-regular fa-circle-check"></i>
+                                        Dịch vụ đáng tin cậy
+                                    </li>
+                                    <li>
+                                        <i class="fa-regular fa-circle-check"></i>
+                                        Đặt chỗ linh hoạt, không rắc rối
+                                    </li>
+                                    <li>
+                                        <i class="fa-regular fa-circle-check"></i>
+                                        Cập nhật lịch trình thời gian thực
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <i class="fa-regular fa-circle-check"></i>
+                                        Hỗ trợ khách hàng 24/7
+                                    </li>
+                                    <li>
+                                        <i class="fa-regular fa-circle-check"></i>
+                                        Giải pháp thanh toán liền mạch
+                                    </li>
+                                    <li>
+                                        <i class="fa-regular fa-circle-check"></i>
+                                        Khám phá ẩm thực địa phương
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <Button theme="theme2">
+                                    Thêm về chúng tôi
+                                </Button>
+                                <div className={styles.we}></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={styles['about-footer']}>
+                        <p>
+                            Hãy chung tay với các đối tác đáng tin cậy của chúng
+                            tôi để khám phá Trải nghiệm du lịch độc quyền, sự
+                            thoải mái vô song và Hành trình liền mạch trên toàn
+                            thế giới
+                        </p>
                     </div>
                 </div>
             </div>

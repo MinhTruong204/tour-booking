@@ -12,6 +12,11 @@ $timeduration: 5s;
     padding-top: 1rem;
     font-weight: 800;
     font-size: 3rem;
+    line-height: normal;
+}
+@mixin paragraph {
+    color: $subTextColor;
+    font-size: 1.2rem;
 }
 
 @keyframes slideFadeIn {
@@ -46,7 +51,6 @@ $timeduration: 5s;
         transform: translateY(0);
         opacity: 1;
     }
-    
 }
 
 .container {
@@ -170,8 +174,6 @@ $timeduration: 5s;
     }
 }
 
-
-
 .trendy {
     display: flex;
     flex-direction: column;
@@ -192,7 +194,7 @@ $timeduration: 5s;
         margin-top: 5rem;
         .tourCard {
             position: relative;
-            flex : 1 1 calc(33.333% );
+            flex: 1 1 calc(33.333%);
             padding: 1rem;
             img {
                 width: 100%;
@@ -205,12 +207,102 @@ $timeduration: 5s;
                 bottom: 3rem;
                 left: 3rem;
                 background-color: #fff;
-                padding: .5rem 2rem;
+                padding: 0.5rem 2rem;
                 border-radius: $buttonBorder;
-                
             }
         }
     }
 }
 
+.about {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    background-color: $backgroundSection1;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+}
 
+.about-content {
+    display: flex;
+    .imgage {
+        position: relative;
+        flex: 1 0 40%;
+        margin-right: 5rem;
+        .experienceBox {
+            position: absolute;
+            bottom: 5rem;
+            left: 5rem;
+            color: white;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            font-size: 1.5rem;
+            span {
+                font-size: 5rem;
+                display: block;
+                font-weight: 800;
+                line-height: normal;
+            }
+            background-color: $themeColor1;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: $imageBoder;
+            box-shadow: $boxShadow;
+        }
+    }
+
+    .detail {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        span {
+            @include themeTitle1;
+        }
+        h2 {
+            @include themeTitle2;
+        }
+        p {
+            @include paragraph;
+        }
+        .slogan {
+            @include themeTitle2;
+            font-size: 1.5rem;
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 1rem;
+            border-left: 0.5rem solid $themeColor2;
+        }
+        .benefits {
+            display: flex;
+            ul {
+                flex: 1 0 50%;
+                li {
+                    @include paragraph;
+                    font-weight: bold;
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 1rem;
+                }
+                i {
+                    margin-right: 0.5rem;
+                    color: $themeColor2;
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+}
+
+.about-footer {
+    margin-top: 5rem;
+    p {
+        @include paragraph;
+        font-size: 1.5rem;
+        font-weight: 500;
+        max-width: 660px;
+        text-align: center;
+    }
+}

@@ -32,7 +32,7 @@ function Header() {
     useEffect(() => {  
         const handleScroll = () => {
             const headerElement = document.querySelector(`.${styles.header}`);
-            if (window.scrollY > 100) {
+            if (window.scrollY > 500) {
                 headerElement.classList.add(styles.scrolled); // Thêm class khi cuộn xuống
             } else {
                 headerElement.classList.remove(styles.scrolled); // Xóa class khi cuộn lên
