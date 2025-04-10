@@ -1,10 +1,15 @@
 @import '../../GlobalStyel/variables';
 $height : 60px;
 .scrolled {
-    background-color:$themeColor2;
+    background-color:$themeColor1;
     transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    .active {
+        background-color: #fff;
+    }
     a,
     i {
+        color: #000 !important;
+        font-weight: 700;
         &:hover {
             cursor: pointer;
             color: $textColorHover;

@@ -1,45 +1,84 @@
 {
-    "trendy": [
+    "tours": [
         {
             "id": 1,
-            "name": "Hạ Long Bay",
-            "image": "https://cdn.pixabay.com/photo/2016/10/16/17/03/vietnam-1745819_1280.jpg"
+            "tentour": "Hạ Long Bay",
+            "anhminhhoa": "https://cdn.pixabay.com/photo/2016/10/16/17/03/vietnam-1745819_1280.jpg",
+            "tinhthanh": "Quảng Ninh",
+            "giagoc": 2000000,
+            "gioithieu": "Hạ Long Bay là một trong những kỳ quan thiên nhiên thế giới, nổi tiếng với hàng ngàn hòn đảo đá vôi tuyệt đẹp.",
+            "theloai": "Thiên nhiên",
+            "giaban": 1800000
         },
         {
             "id": 2,
-            "name": "Phố cổ Hội An",
-            "image": "https://cdn.pixabay.com/photo/2018/10/04/17/08/the-lantern-3724092_960_720.jpg"
+            "tentour": "Phố cổ Hội An",
+            "anhminhhoa": "https://cdn.pixabay.com/photo/2018/10/04/17/08/the-lantern-3724092_960_720.jpg",
+            "tinhthanh": "Quảng Nam",
+            "giagoc": 1500000,
+            "gioithieu": "Phố cổ Hội An là di sản văn hóa thế giới, nổi tiếng với kiến trúc cổ kính và đèn lồng rực rỡ.",
+            "theloai": "Văn hóa",
+            "giaban": 1350000
         },
         {
             "id": 3,
-            "name": "Phong Nha-Kẻ Bàng",
-            "image": "https://cdn.pixabay.com/photo/2023/07/04/10/20/river-8105970_1280.jpg"
+            "tentour": "Phong Nha-Kẻ Bàng",
+            "anhminhhoa": "https://cdn.pixabay.com/photo/2023/07/04/10/20/river-8105970_1280.jpg",
+            "tinhthanh": "Quảng Bình",
+            "giagoc": 2500000,
+            "gioithieu": "Phong Nha-Kẻ Bàng là vườn quốc gia nổi tiếng với hệ thống hang động kỳ vĩ và đa dạng sinh học.",
+            "theloai": "Thiên nhiên",
+            "giaban": 2250000
         },
         {
             "id": 4,
-            "name": "Cố Đô Huế",
-            "image": "https://cdn.pixabay.com/photo/2020/03/08/13/22/hue-4912504_960_720.jpg"
+            "tentour": "Cố Đô Huế",
+            "anhminhhoa": "https://cdn.pixabay.com/photo/2020/03/08/13/22/hue-4912504_960_720.jpg",
+            "tinhthanh": "Thừa Thiên Huế",
+            "giagoc": 1800000,
+            "gioithieu": "Cố Đô Huế là trung tâm văn hóa và lịch sử của Việt Nam, nổi tiếng với các cung điện và lăng tẩm cổ kính.",
+            "theloai": "Lịch sử",
+            "giaban": 1620000
         },
         {
             "id": 5,
-            "name": "Cầu Vàng Đà Nẵng",
-            "image": "https://cdn.pixabay.com/photo/2019/12/21/17/24/golden-bridge-4710873_1280.jpg"
+            "tentour": "Cầu Vàng Đà Nẵng",
+            "anhminhhoa": "https://cdn.pixabay.com/photo/2019/12/21/17/24/golden-bridge-4710873_1280.jpg",
+            "tinhthanh": "Đà Nẵng",
+            "giagoc": 1200000,
+            "gioithieu": "Cầu Vàng Đà Nẵng là một công trình kiến trúc độc đáo, nổi tiếng với thiết kế bàn tay khổng lồ nâng đỡ cây cầu.",
+            "theloai": "Kiến trúc",
+            "giaban": 1080000
         },
         {
             "id": 6,
-            "name": "Ruộng bậc thang Sa Pa",
-            "image": "https://cdn.pixabay.com/photo/2019/09/17/02/38/nature-4482349_1280.jpg"
+            "tentour": "Ruộng bậc thang Sa Pa",
+            "anhminhhoa": "https://cdn.pixabay.com/photo/2019/09/17/02/38/nature-4482349_1280.jpg",
+            "tinhthanh": "Lào Cai",
+            "giagoc": 3000000,
+            "gioithieu": "Ruộng bậc thang Sa Pa là một trong những cảnh quan đẹp nhất Việt Nam, nổi tiếng với vẻ đẹp thiên nhiên và văn hóa dân tộc.",
+            "theloai": "Thiên nhiên",
+            "giaban": 2700000
         },
-        
         {
             "id": 7,
-            "name": "Nha Trang Beach",
-            "image": "https://cdn.pixabay.com/photo/2018/10/19/09/17/travel-3758193_1280.jpg"
+            "tentour": "Nha Trang Beach",
+            "anhminhhoa": "https://cdn.pixabay.com/photo/2018/10/19/09/17/travel-3758193_1280.jpg",
+            "tinhthanh": "Khánh Hòa",
+            "giagoc": 2200000,
+            "gioithieu": "Nha Trang Beach là một trong những bãi biển đẹp nhất Việt Nam, nổi tiếng với nước biển trong xanh và các hoạt động giải trí.",
+            "theloai": "Biển",
+            "giaban": 1980000
         },
         {
             "id": 8,
-            "name": "Đỉnh Fansipan",
-            "image": "https://www.vietourist.com.vn/public/frontend/uploads/kceditor/images/06ba27cafdbc28e271ad.jpg"
+            "tentour": "Đỉnh Fansipan",
+            "anhminhhoa": "https://www.vietourist.com.vn/public/frontend/uploads/kceditor/images/06ba27cafdbc28e271ad.jpg",
+            "tinhthanh": "Lào Cai",
+            "giagoc": 3500000,
+            "gioithieu": "Đỉnh Fansipan là nóc nhà Đông Dương, điểm đến lý tưởng cho những người yêu thích leo núi và khám phá thiên nhiên.",
+            "theloai": "Phiêu lưu",
+            "giaban": 3150000
         }
     ]
 }

@@ -19,6 +19,18 @@ $timeduration: 5s;
     font-size: 1.2rem;
 }
 
+@mixin headerStyle {
+    span {
+        @include themeTitle1;
+    }
+    h2 {
+        @include themeTitle2;
+    }
+    p {
+        @include paragraph;
+    }
+}
+
 @keyframes slideFadeIn {
     0% {
         opacity: 0;
@@ -58,6 +70,9 @@ $timeduration: 5s;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    & > div {
+        margin-bottom: 5rem;
+    }
 }
 
 .banner {
@@ -178,12 +193,13 @@ $timeduration: 5s;
     display: flex;
     flex-direction: column;
     width: 100%;
-    span {
-        @include themeTitle1;
-    }
-    h2 {
-        @include themeTitle2;
-    }
+    // span {
+    //     @include themeTitle1;
+    // }
+    // h2 {
+    //     @include themeTitle2;
+    // }
+    @include headerStyle;
     .header {
         display: flex;
         justify-content: space-between;
@@ -194,8 +210,16 @@ $timeduration: 5s;
         margin-top: 5rem;
         .tourCard {
             position: relative;
-            flex: 1 1 calc(33.333%);
-            padding: 1rem;
+            flex: 1 1 calc(33.333% - 1rem);
+            margin: .5rem;
+            overflow: hidden;
+            @include hoverBehavior;
+            &:hover {
+                p {
+                    background-color: $themeColor2;
+                    color: white;
+                }
+            }
             img {
                 width: 100%;
                 border-radius: $imageBoder;
@@ -209,6 +233,7 @@ $timeduration: 5s;
                 background-color: #fff;
                 padding: 0.5rem 2rem;
                 border-radius: $buttonBorder;
+                
             }
         }
     }
@@ -221,6 +246,7 @@ $timeduration: 5s;
     align-items: center;
     background-color: $backgroundSection1;
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+    padding : 5rem 0;
 }
 
 .about-content {
@@ -258,15 +284,16 @@ $timeduration: 5s;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        span {
-            @include themeTitle1;
-        }
-        h2 {
-            @include themeTitle2;
-        }
-        p {
-            @include paragraph;
-        }
+        // span {
+        //     @include themeTitle1;
+        // }
+        // h2 {
+        //     @include themeTitle2;
+        // }
+        // p {
+        //     @include paragraph;
+        // }
+        @include headerStyle;
         .slogan {
             @include themeTitle2;
             font-size: 1.5rem;
@@ -293,6 +320,24 @@ $timeduration: 5s;
                 }
             }
         }
+        .expolre {
+            display: flex;
+            align-items: center;
+            button {
+                margin-right: 2rem;
+            }
+            img {
+                width: 5rem;
+                height: 5rem;
+                object-fit: cover;
+                border-radius: 100%;
+                border: 3px solid white;
+
+                &:not(:first-child) {
+                    margin-left: -1rem;
+                }
+            }
+        }
     }
 }
 
@@ -306,3 +351,19 @@ $timeduration: 5s;
         text-align: center;
     }
 }
+
+.feature-place {
+    .header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        @include headerStyle;
+    }
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+

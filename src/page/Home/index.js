@@ -1,13 +1,21 @@
 import { useEffect, useState } from 'react';
+import Button from '../../components/common/button';
+import { fetchTours } from '../../api/tourAPI';
+//
 import styles from './Home.module.scss';
+import TourCard from '../../components/common/tourCard';
+//
 import banner1 from '../../assets/images/banner/banner1.jpg';
 import banner2 from '../../assets/images/banner/banner2.jpg';
 import banner3 from '../../assets/images/banner/banner3.jpg';
 import aboutImg from '../../assets/images/about-section-homepage.jpg';
-import Button from '../../components/common/button';
-import { fetchTours } from '../../api/tourAPI';
-
+import hquan from '../../assets/images/members/hquan.jpg';
+import khanh from '../../assets/images/members/khanh.jpg';
+import minh from '../../assets/images/members/minh.jpg';
+import phu from '../../assets/images/members/phu.jpg';
+import thuc from '../../assets/images/members/thuc.jpg';
 const bannerImgs = [banner1, banner2, banner3];
+const members = [hquan, khanh, minh, phu, thuc];
 
 function Home() {
     const [currentImageBanner, setcurrentImageBanner] = useState(bannerImgs[0]);
@@ -182,15 +190,15 @@ function Home() {
                         
                         {tours.map((tour) => (
                             <div key={tour.id} className={styles.tourCard}>
-                            <img src={tour.image} alt={tour.name} />
-                            <p >{tour.name}</p>
+                            <img src={tour.anhminhhoa} alt={tour.tentour} />
+                            <p >{tour.tentour}</p>
                         </div>
                         ))}
                     </div>
                 </div>
 
                 {/* About */}
-                <div className={`${styles.about} container`}>
+                <div className={`container ${styles.about} `}>
                     <div className={`${styles['about-content']}`}>
                         <div className={styles.imgage}>
                             <img src={aboutImg}></img>
@@ -223,38 +231,46 @@ function Home() {
                             <div className={styles.benefits}>
                                 <ul>
                                     <li>
-                                        <i class="fa-regular fa-circle-check"></i>
+                                        <i className="fa-regular fa-circle-check"></i>
                                         Dịch vụ đáng tin cậy
                                     </li>
                                     <li>
-                                        <i class="fa-regular fa-circle-check"></i>
+                                        <i className="fa-regular fa-circle-check"></i>
                                         Đặt chỗ linh hoạt, không rắc rối
                                     </li>
                                     <li>
-                                        <i class="fa-regular fa-circle-check"></i>
+                                        <i className="fa-regular fa-circle-check"></i>
                                         Cập nhật lịch trình thời gian thực
                                     </li>
                                 </ul>
                                 <ul>
                                     <li>
-                                        <i class="fa-regular fa-circle-check"></i>
+                                        <i className="fa-regular fa-circle-check"></i>
                                         Hỗ trợ khách hàng 24/7
                                     </li>
                                     <li>
-                                        <i class="fa-regular fa-circle-check"></i>
+                                        <i className="fa-regular fa-circle-check"></i>
                                         Giải pháp thanh toán liền mạch
                                     </li>
                                     <li>
-                                        <i class="fa-regular fa-circle-check"></i>
+                                        <i className="fa-regular fa-circle-check"></i>
                                         Khám phá ẩm thực địa phương
                                     </li>
                                 </ul>
                             </div>
-                            <div>
+                            <div className={styles.expolre}>
                                 <Button theme="theme2">
                                     Thêm về chúng tôi
                                 </Button>
-                                <div className={styles.we}></div>
+                                <div className={styles.we}>
+                                    {members.map((member, index) => (
+                                        <img
+                                            key={index}
+                                            src={member}
+                                            alt={`Member ${index + 1}`}
+                                        ></img>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -267,6 +283,27 @@ function Home() {
                         </p>
                     </div>
                 </div>
+
+                {/* Feature Place */}
+                <div className={styles['feature-place']}>
+                    <div className={styles.header}>
+                        <span>Điểm đến nổi bật</span>
+                        <h2>Những địa điểm du lịch nổi bật</h2>
+                        <p>
+                            Thẻ tham quan của chúng tôi giúp bạn tiết kiệm nhiều
+                            hơn so với việc mua vé riêng lẻ cho hệ thống trọn
+                            gói tour của bạn.
+                        </p>
+                    </div>
+                    <div className={`${styles.content} container`}>
+                        {tours.map((tour,index) => (
+                            <TourCard key={index} tour ={tour}></TourCard>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Tour discover */}
+                
             </div>
         </div>
     );

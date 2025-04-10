@@ -1,0 +1,85 @@
+@import '../../GlobalStyel/variables';
+
+.tourCard {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: $boxShadow;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 calc(25% - 20px); // Chiều rộng 25% với khoảng cách 20px giữa các thẻ
+    margin: 10px; // Khoảng cách giữa các thẻ
+    @include hoverBehavior;
+
+    &__image {
+        position: relative;
+        
+        img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+
+        // .category {
+        //     position: absolute;
+        //     top: 10px;
+        //     left: 10px;
+        //     background-color: $themeColor1;
+        //     color: #fff;
+        //     font-size: 1.5rem;
+        //     // font-weight: bold;
+        //     font-style: italic;
+        //     padding: 5px 15px;
+        //     border-radius: 5px;
+        // }
+    }
+
+    &__content {
+        padding: 15px;
+        
+        .location {
+            font-size: 1rem;
+            color: #777;
+            color: $themeColor2;
+        }
+        .title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            &:hover {
+                color: $themeColor2;
+            }
+        }
+
+
+        .price {
+            color: $subTextColor;
+            font-size: 1.2rem;
+            .new {
+
+                font-weight: 900;
+                color: $themeColor2;
+                padding: 0 5px;
+            }
+            .old {
+                text-decoration: line-through;
+            }
+        }
+
+        // .button {
+        //     display: inline-block;
+        //     background-color: $themeColor1;
+        //     color: #fff;
+        //     font-size: 0.9rem;
+        //     font-weight: bold;
+        //     padding: 10px 15px;
+        //     border: none;
+        //     border-radius: 5px;
+        //     cursor: pointer;
+        //     transition: background-color 0.3s ease;
+
+        //     &:hover {
+        //         background-color: $themeColor2;
+        //     }
+        // }
+    }
+}

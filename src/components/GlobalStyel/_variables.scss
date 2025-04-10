@@ -21,3 +21,13 @@ $backgroundSection2 : #FFEEE3;;
 
 $imageBoder : 2rem;
 $borderShadow : 0 0 0 1px rgba(68, 68, 68, 0.11);
+
+@mixin hoverBehavior { 
+    & {
+        transition: transform 0.3s ease,  0.3s ease;
+    }
+    &:hover {
+        transform: translateY(-5px);    
+        cursor: pointer;
+    }
+}
