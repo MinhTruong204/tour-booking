@@ -367,3 +367,71 @@ $timeduration: 5s;
 }
 
 
+.guiding-team {
+    text-align: center;
+    margin: 50px 0;
+
+    @include headerStyle;
+
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+
+        .memberCard {
+            width: 250px;
+            text-align: center;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+            .memberInfo {
+                box-shadow: inset 0 0 0 1px rgba(68, 68, 68, 0.11);
+                margin: auto 2rem;
+                border-radius: 2rem;
+                padding: 1rem;
+            }
+            img {
+                width: 150px;
+                height: 150px;
+                object-fit: cover;
+                border-radius: 50%; // Bo tròn hình ảnh
+                margin-bottom: 15px;
+            }
+
+            span {
+                display: block;
+                font-size: 1rem;
+                color: $themeColor1; // Màu themeColor1
+            }
+            h3 {
+                margin-bottom: 1rem;
+                &:hover {
+                    cursor: pointer;
+                    color: $themeColor2; // Đổi màu khi hover
+                }
+            }
+
+            .socialLinks {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                
+                a {
+                    font-size: 20px;
+                    color: $subTextColor;
+                    transition: all 0.3s ease;
+
+                    &:hover {
+                        cursor: pointer;
+                        color: $themeColor2; // Đổi màu khi hover
+                    }
+                }
+            }
+        }
+    }
+}
+
