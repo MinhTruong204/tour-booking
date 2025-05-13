@@ -1,0 +1,177 @@
+@import '../../components/GlobalStyel//variables';
+.content {
+    display: flex;
+    width: 100%;
+    .info {
+        flex: 70%;
+        display: flex;
+        flex-direction: column;
+
+        .image {
+            width: 100%;
+            height: 40rem;
+            object-fit: cover;
+            border-radius: $imageBoder;
+        }
+        .address {
+            i {
+                color: $themeColor2;
+            }
+            span {
+                margin-left: 1rem;
+                color: $subTextColor;
+                vertical-align: center;
+            }
+        }
+        .name {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: $mainTextColor;
+        }
+        .description {
+            font-size: 1.2rem;
+            color: $subTextColor;
+        }
+
+        .originalPrice {
+            margin-left: 1rem;
+            font-size: 1.4rem;
+            color: $subTextColor;
+            text-decoration: line-through;
+        }
+        .discountPrice {
+            margin-left: 1rem;
+            font-size: 2rem;
+            font-weight: bold;
+            color: $themeColor2;
+        }
+        .experience {
+            .title {
+                font-size: 2rem;
+                font-weight: bolder;
+                margin-bottom: 20px;
+            }
+            .listWrapper {
+                display: flex;
+                justify-content: space-between;
+                .list {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    flex: 1;
+                }
+                .listItem {
+                    position: relative;
+                    padding-left: 30px;
+                    margin-bottom: 10px;
+                    font-size: 1.4rem;
+                    font-weight: bold;
+                    color: $subTextColor;
+
+                    &:before {
+                        content: '✓';
+                        position: absolute;
+                        left: 0;
+                        color: #4b0082; // Màu tím giống trong hình
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+        .tour-plan {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f9f9ff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+            .title {
+                font-size: 24px;
+                font-weight: bold;
+                color: #333;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            .tour-plan-list {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .tour-plan-item {
+                background-color: #fff;
+                border-radius: 10px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+
+                .tour-plan-header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 15px;
+                    background-color: #f1f1f1;
+                    cursor: pointer;
+
+                    .tour-plan-day {
+                        font-weight: bold;
+                        color: $themeColor2;
+                    }
+
+                    .tour-plan-name {
+                        font-size: 16px;
+                        font-weight: bold;
+                        color: #333;
+                    }
+
+                    .toggle-button {
+                        background: none;
+                        border: none;
+                        font-size: 16px;
+                        cursor: pointer;
+                        color: #666;
+                        transition: transform 0.3s ease;
+
+                        &:hover {
+                            color: #333;
+                        }
+                    }
+                }
+
+                .tour-plan-content {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    padding: 15px;
+                    // display: none; // Hidden by default
+
+                    &.active {
+                        display: flex; // Show when active
+                    }
+
+                    .tour-plan-image {
+                        width: 100%;
+                        height: 20rem;
+                        object-fit: cover;
+                        border-radius: 10px;
+                    }
+
+                    .tour-plan-info {
+                        p {
+                            font-size: 14px;
+                            color: #666;
+                            margin: 5px 0;
+
+                            strong {
+                                color: #333;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .order {
+        flex: 30%;
+    }
+}

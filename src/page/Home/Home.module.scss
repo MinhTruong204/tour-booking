@@ -157,10 +157,7 @@ $timeduration: 5s;
                     padding: 0 3rem;
                     display: flex;
                     align-items: center;
-                    &:hover {
-                        font-weight: bold;
-                        background-color: #f6f6f6;
-                    }
+                   
                 }
             }
         }
@@ -211,7 +208,7 @@ $timeduration: 5s;
         .tourCard {
             position: relative;
             flex: 1 1 calc(33.333% - 1rem);
-            margin: .5rem;
+            margin: 0.5rem;
             overflow: hidden;
             @include hoverBehavior;
             &:hover {
@@ -233,7 +230,6 @@ $timeduration: 5s;
                 background-color: #fff;
                 padding: 0.5rem 2rem;
                 border-radius: $buttonBorder;
-                
             }
         }
     }
@@ -246,7 +242,7 @@ $timeduration: 5s;
     align-items: center;
     background-color: $backgroundSection1;
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
-    padding : 5rem 0;
+    padding: 5rem 0;
 }
 
 .about-content {
@@ -366,7 +362,6 @@ $timeduration: 5s;
     }
 }
 
-
 .guiding-team {
     text-align: center;
     margin: 50px 0;
@@ -419,7 +414,7 @@ $timeduration: 5s;
                 display: flex;
                 justify-content: center;
                 gap: 10px;
-                
+
                 a {
                     font-size: 20px;
                     color: $subTextColor;
@@ -435,3 +430,57 @@ $timeduration: 5s;
     }
 }
 
+.footer {
+    background-image: url('../../assets/images/footer.jpg');
+    .input-area {
+        display: flex;
+        align-items: center;
+        h1 {
+            font-size: 5rem;
+            padding-right: 5rem;
+            line-height: 5rem;
+        }
+        .input-box {
+            flex: 50% 1 1;
+            width: 100%;
+            height: 5rem;
+            background-color: white;
+            border-radius: 5rem;
+            input {
+                height: 100%;
+                background-color: white;
+                border-radius: 10rem;
+                padding: 0 3rem;
+                font-size: 1.5rem;
+                color: $mainTextColor;
+                border: none;
+                outline: none;
+            }
+            .input-button {
+                background-color: $buttonColor;
+                border: none;
+                color: white;
+                font-size: 1.5rem;
+                padding: 1rem 3rem;
+                margin-left: 3rem;
+                border-radius: $buttonBorder;
+                cursor: pointer;
+                box-shadow: $boxShadow;
+                transition: all 0.3s ease-in-out;
+                i {
+                    padding-left: 1rem;
+                    font-size: small;
+                    vertical-align: middle;
+                }
+                &:hover {
+                    background-color: $buttonColorHover;
+                    box-shadow: $borderShadow;
+                    transform: translateY(-2px);
+                }
+            }
+        }
+    }
+    .footer-content {
+        
+    }
+}

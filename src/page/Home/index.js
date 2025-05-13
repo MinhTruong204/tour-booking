@@ -15,11 +15,13 @@ import minh from '../../assets/images/members/minh.jpg';
 import phu from '../../assets/images/members/phu.jpg';
 import thuc from '../../assets/images/members/thuc.jpg';
 const bannerImgs = [banner1, banner2, banner3];
-const members = [{avatar :hquan,name :'Hong Quan'},
-    {avatar :khanh,name :'Khanh'},
-    {avatar :minh,name :'Minh'},
-    {avatar :phu,name :'Phu'},
-    {avatar :thuc,name :'Thuc'}];
+const members = [
+    { avatar: hquan, name: 'Hong Quan' },
+    { avatar: khanh, name: 'Khanh' },
+    { avatar: minh, name: 'Minh' },
+    { avatar: phu, name: 'Phu' },
+    { avatar: thuc, name: 'Thuc' },
+];
 
 function Home() {
     const [currentImageBanner, setcurrentImageBanner] = useState(bannerImgs[0]);
@@ -191,12 +193,11 @@ function Home() {
                         <Button theme="theme1">Expolre Now</Button>
                     </div>
                     <div className={styles.content}>
-                        
                         {tours.map((tour) => (
                             <div key={tour.id} className={styles.tourCard}>
-                            <img src={tour.anhminhhoa} alt={tour.tentour} />
-                            <p >{tour.tentour}</p>
-                        </div>
+                                <img src={tour.anhminhhoa} alt={tour.tentour} />
+                                <p>{tour.tentour}</p>
+                            </div>
                         ))}
                     </div>
                 </div>
@@ -300,8 +301,8 @@ function Home() {
                         </p>
                     </div>
                     <div className={`${styles.content} container`}>
-                        {tours.map((tour,index) => (
-                            <TourCard key={index} tour ={tour}></TourCard>
+                        {tours.map((tour, index) => (
+                            <TourCard key={index} tour={tour}></TourCard>
                         ))}
                     </div>
                 </div>
@@ -312,24 +313,41 @@ function Home() {
                         <span>Đội ngũ hướng dẫn viên</span>
                         <h2>Những người đồng hành đáng tin cậy</h2>
                         <p>
-                            Đội ngũ hướng dẫn viên chuyên nghiệp của chúng tôi luôn sẵn sàng mang đến cho bạn những trải nghiệm tuyệt vời nhất.
+                            Đội ngũ hướng dẫn viên chuyên nghiệp của chúng tôi
+                            luôn sẵn sàng mang đến cho bạn những trải nghiệm
+                            tuyệt vời nhất.
                         </p>
                     </div>
                     <div className={`${styles.content} container`}>
                         {members.map((member, index) => (
                             <div key={index} className={styles.memberCard}>
-                                <img src={member.avatar} alt={`Member ${index + 1}`} />
+                                <img
+                                    src={member.avatar}
+                                    alt={`Member ${index + 1}`}
+                                />
                                 <div className={styles.memberInfo}>
                                     <span>Hướng dẫn viên {index + 1}</span>
                                     <h3>{member.name}</h3>
                                     <div className={styles.socialLinks}>
-                                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                                        <a
+                                            href="https://facebook.com"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
                                             <i className="fa-brands fa-facebook"></i>
                                         </a>
-                                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                                        <a
+                                            href="https://instagram.com"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
                                             <i className="fa-brands fa-instagram"></i>
                                         </a>
-                                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                                        <a
+                                            href="https://twitter.com"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
                                             <i className="fa-brands fa-twitter"></i>
                                         </a>
                                     </div>
@@ -338,8 +356,25 @@ function Home() {
                         ))}
                     </div>
                 </div>
-
-                
+            </div>
+            {/* Footer */}
+            <div className={styles.footer + ' container'}>
+                <div className={styles['input-area']}>
+                    <h1>Đăng ký nhận thông tin mới nhất</h1>
+                    <div className={styles['input-box']}>
+                        <input
+                            type="text"
+                            placeholder="Nhập email của bạn"
+                        ></input>
+                        <button className={styles['input-button']}>
+                            Đăng ký
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                </div>
+                <div className={styles['footer-content']}>
+                    
+                </div>
             </div>
         </div>
     );

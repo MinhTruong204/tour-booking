@@ -1,5 +1,5 @@
 @import '../../GlobalStyel/variables';
-$height : 60px;
+$height : 4rem;
 .scrolled {
     background-color:$themeColor1;
     transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -12,7 +12,7 @@ $height : 60px;
         font-weight: 700;
         &:hover {
             cursor: pointer;
-            color: $textColorHover;
+            color: white !important;
         }
         
     }
@@ -23,8 +23,9 @@ $height : 60px;
     display: flex;
     align-items: center;
     padding: 0 5rem 0 5rem;
-    position: fixed;
+    // position: fixed;
     z-index: 1;
+    background-color: $themeColor1;
 
     .logo {
         height: 70%;
@@ -42,12 +43,12 @@ $height : 60px;
             a,
             i {
                 text-decoration: none;
-                color: white;
-                font-weight: 300;
+                color: white    ;
+                font-weight: 500;
                 &:hover {
                     cursor: pointer;
-                    color: $textColorHover;
-                }
+                    color: white;
+                }   
                
             }
         }
@@ -57,8 +58,7 @@ $height : 60px;
 
 
 .active {
-    background-color: $backgroundColor;
-    padding: 1rem 2rem;
-    border-radius: $buttonBorder;
+    background-color: darken($buttonColor, 10%);;
+    padding: .8rem 2rem;
     transition: left 0.3s ease, width 0.3s ease;
 }

@@ -7,10 +7,12 @@ function Header() {
     const menuRefs = useRef([]);
     const menuItems = [
         { label: 'Trang chủ', link: '/home' },
-        { label: 'Tours', link: '/about' },
-        { label: 'Khuyến Mãi', link: '/tours' },
+        { label: 'Danh sách', link: '/tours' },
+        { label: 'Chi tiết', link: '/tour' },
+        // { label: 'Khuyến Mãi', link: '/tours' },
         { label: 'Liên hệ', link: '/contact' },
-        { label: 'Đăng nhập | Đăng ký', link: '/dndk' },
+        { label: 'Đăng nhập', link: '/signin' },
+        { label: 'Đăng ký', link: '/signup' },
     ];
 
     // Xác định mục active dựa trên URL hiện tại
