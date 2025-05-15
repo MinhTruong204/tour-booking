@@ -14,6 +14,7 @@ import khanh from '../../assets/images/members/khanh.jpg';
 import minh from '../../assets/images/members/minh.jpg';
 import phu from '../../assets/images/members/phu.jpg';
 import thuc from '../../assets/images/members/thuc.jpg';
+import { Link } from 'react-router-dom';
 const bannerImgs = [banner1, banner2, banner3];
 const members = [
     { avatar: hquan, name: 'Hong Quan' },
@@ -301,8 +302,15 @@ function Home() {
                         </p>
                     </div>
                     <div className={`${styles.content} container`}>
-                        {tours.map((tour, index) => (
-                            <TourCard key={index} tour={tour}></TourCard>
+                        {tours.map((tour) => (
+                            <Link
+                                key={tour.id}
+                                to={`/tour/${tour.id}`}
+                                className={styles.tourCardLink}
+                                style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}
+                            >
+                                <TourCard tour={tour} />
+                            </Link>
                         ))}
                     </div>
                 </div>

@@ -1,71 +1,55 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import Banner from '../../components/layouts/Banner';
 import styles from './Tour.module.scss';
-import Order from '../../components/layouts/Order';
-const tour = {
-    id: 'TOUR_DN_3N',
-    tentour: 'Khám phá Đà Nẵng 3 ngày 2 đêm',
-    tinhthanh: 'Đà Nẵng',
-    khuvuc: 'Miền Trung',
-    anhminhhoa: 'https://byvn.net/8Zuz',
-    theloai: 'THIEN_NHIEN',
-    giagoc: 3200000,
-    gioithieu:
-        'Trải nghiệm vẻ đẹp thiên nhiên và văn hóa của Đà Nẵng với lịch trình hấp dẫn gồm Bà Nà Hills, Bán đảo Sơn Trà, Cầu Rồng và Biển Mỹ Khê.',
-    thongtinlichtrinh: {
-        idlichtrinh: 'LT_DN_3N',
-        thoigiandi: '2025-05-10T08:00:00',
-        thoigianve: '2025-05-12T18:00:00',
-        diemdungs: [
-            {
-                iddiemdung: 'D2',
-                tendiemdung: 'Bán đảo Sơn Trà',
-                thoigiandi: '2025-05-10T13:30:00',
-                thoigianroi: '2025-05-10T16:30:00',
-                anhminhhoa: ['https://byvn.net/CdDe', 'https://byvn.net/J2Fp'],
-            },
-            {
-                iddiemdung: 'D3',
-                tendiemdung: 'Cầu Rồng & Biển Mỹ Khê',
-                thoigiandi: '2025-05-10T17:00:00',
-                thoigianroi: '2025-05-10T19:30:00',
-                anhminhhoa: ['https://byvn.net/OlGZ', 'https://byvn.net/KI5k'],
-            },
-            {
-                iddiemdung: 'D1',
-                tendiemdung: 'Bà Nà Hills',
-                thoigiandi: '2025-05-10T08:00:00',
-                thoigianroi: '2025-05-10T12:00:00',
-                anhminhhoa: ['https://byvn.net/5mZt', 'https://byvn.net/71j2'],
-            },
-        ],
-    },
-    cackhuyenmai: [],
-    giaban: 3200000,
-};
+import bannerimg from '../../assets/images/chitiettour-banner.jpg';
+import { fetchTourById } from '../../api/tourAPI'; // Đường dẫn đến file tourAPI.js
+import Button from '../../components/common/button'; // Đảm bảo đúng đường dẫn
 
 function Tour() {
-    const [activeIndexes, setActiveIndexes] = useState([]); // Lưu trữ các mục đang mở
+    const { id } = useParams();
+    const [tour, setTour] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [activeIndexes, setActiveIndexes] = useState([]);
+
+    useEffect(() => {
+        const getTour = async () => {
+            try {
+                const data = await fetchTourById(id);
+                setTour(data.result || data); // tuỳ theo API trả về
+            } catch (error) {
+                setTour(null);
+            } finally {
+                setLoading(false);
+            }
+        };
+        getTour();
+    }, [id]);
 
     const togglePlanContent = (index) => {
         if (activeIndexes.includes(index)) {
-            setActiveIndexes(activeIndexes.filter((i) => i !== index)); // Loại bỏ mục nếu đã mở
+            setActiveIndexes(activeIndexes.filter((i) => i !== index));
         } else {
-            setActiveIndexes([...activeIndexes, index]); // Thêm mục nếu chưa mở
+            setActiveIndexes([...activeIndexes, index]);
         }
     };
 
+    if (loading) return <div>Loading...</div>;
+    if (!tour) return <div>Không tìm thấy tour.</div>;
+
     return (
         <div>
-            <Banner img ={tour.anhminhhoa}>Chi tiết</Banner>
+            <Banner img={bannerimg}></Banner>
+            <h1 className={styles.title + ' container'}>Chi tiết chuyến đi</h1>
+            {/* Chi tiết chuyến đi <br /> */}
             <div className={styles.content + ' container'}>
                 <div className={styles.info}>
-                    {/* <img
+                    <img
                         src={tour.anhminhhoa}
                         alt={tour.tentour}
                         className={styles.image}
                     />
-                    <br /> */}
+                    <br />
                     <div className={styles.address}>
                         <i className="fa-solid fa-location-dot"></i>
                         <span>{tour.tinhthanh}</span>
@@ -78,17 +62,24 @@ function Tour() {
                     <div className={styles.price}>
                         <span className={styles.priceLabel}>Giá:</span>
                         <span className={styles.discountPrice}>
-                            {tour.giaban.toLocaleString('vi-VN', {
+                            {tour.giaban?.toLocaleString('vi-VN', {
                                 style: 'currency',
                                 currency: 'VND',
                             })}
                         </span>
                         <span className={styles.originalPrice}>
-                            {tour.giaban.toLocaleString('vi-VN', {
+                            {tour.giagoc?.toLocaleString('vi-VN', {
                                 style: 'currency',
                                 currency: 'VND',
                             })}
                         </span>
+                        <Button
+                            theme="theme1"
+                            className={styles.bookBtn}
+                            style={{ marginLeft: 16 }}
+                        >
+                            Đặt tour
+                        </Button>
                     </div>
                     <br />
                     <div className={styles.experience}>
@@ -124,7 +115,7 @@ function Tour() {
                     <div className={styles['tour-plan']}>
                         <h2 className={styles.title}>Lịch trình</h2>
                         <div className={styles['tour-plan-list']}>
-                            {tour.thongtinlichtrinh.diemdungs.map(
+                            {tour.thongtinlichtrinh?.diemdungs?.map(
                                 (diemdung, index) => (
                                     <div
                                         key={diemdung.iddiemdung}
@@ -175,7 +166,9 @@ function Tour() {
                                                 }
                                             >
                                                 <img
-                                                    src={diemdung.anhminhhoa[0]}
+                                                    src={
+                                                        diemdung.anhminhhoa?.[0]
+                                                    }
                                                     alt={diemdung.tendiemdung}
                                                     className={
                                                         styles[
@@ -212,11 +205,6 @@ function Tour() {
                             )}
                         </div>
                     </div>
-                </div>
-
-                {/* <div className={styles.order}> </div> */}
-                <div className={styles.order}>
-                    <Order></Order>
                 </div>
             </div>
         </div>

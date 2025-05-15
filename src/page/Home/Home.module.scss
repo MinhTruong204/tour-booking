@@ -359,6 +359,7 @@ $timeduration: 5s;
     .content {
         display: flex;
         flex-wrap: wrap;
+        
     }
 }
 
@@ -480,7 +481,10 @@ $timeduration: 5s;
             }
         }
     }
-    .footer-content {
-        
-    }
+ 
+}
+.tourCardLink {
+    display: block;
+    width: 33.3333%;
+    height: 100%;
 }
