@@ -195,10 +195,24 @@ function Home() {
                     </div>
                     <div className={styles.content}>
                         {tours.map((tour) => (
-                            <div key={tour.id} className={styles.tourCard}>
-                                <img src={tour.anhminhhoa} alt={tour.tentour} />
-                                <p>{tour.tentour}</p>
-                            </div>
+                            <Link
+                                key={tour.id}
+                                to={`/tour/${tour.id}`}
+                                className={styles.tourCardLink}
+                                style={{
+                                    textDecoration: 'none',
+                                    color: 'inherit',
+                                    display: 'block',
+                                }}
+                            >
+                                <div className={styles.tourCard}>
+                                    <img
+                                        src={tour.anhminhhoa}
+                                        alt={tour.tentour}
+                                    />
+                                    <p>{tour.tentour}</p>
+                                </div>
+                            </Link>
                         ))}
                     </div>
                 </div>
@@ -307,7 +321,11 @@ function Home() {
                                 key={tour.id}
                                 to={`/tour/${tour.id}`}
                                 className={styles.tourCardLink}
-                                style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}
+                                style={{
+                                    textDecoration: 'none',
+                                    color: 'inherit',
+                                    display: 'block',
+                                }}
                             >
                                 <TourCard tour={tour} />
                             </Link>
@@ -380,9 +398,7 @@ function Home() {
                         </button>
                     </div>
                 </div>
-                <div className={styles['footer-content']}>
-                    
-                </div>
+                <div className={styles['footer-content']}></div>
             </div>
         </div>
     );
