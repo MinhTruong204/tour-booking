@@ -12,7 +12,7 @@
         :only-child {
             margin-left: 3rem;
         }
-        
+        cursor: pointer;
 }
 .arrow {
     // background-color: black;
@@ -28,6 +28,8 @@
     background-color: $themeColor1;
 }
 .theme2 {
-    background-color: $themeColor2;
+    background-color: #FF8C00;
 }
-
+.theme3 {
+    background-color: gray;
+}

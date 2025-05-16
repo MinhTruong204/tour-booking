@@ -1,16 +1,22 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import Banner from '../../components/layouts/Banner';
 import styles from './Tour.module.scss';
 import bannerimg from '../../assets/images/chitiettour-banner.jpg';
 import { fetchTourById } from '../../api/tourAPI'; // Đường dẫn đến file tourAPI.js
 import Button from '../../components/common/button'; // Đảm bảo đúng đường dẫn
+import { createPayment } from '../../api/userAPI';
 
 function Tour() {
     const { id } = useParams();
     const [tour, setTour] = useState(null);
     const [loading, setLoading] = useState(true);
     const [activeIndexes, setActiveIndexes] = useState([]);
+    const [showPaymentBox, setShowPaymentBox] = useState(false);
+    const navigate = useNavigate();
+
+    // Lấy user từ localStorage
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
 
     useEffect(() => {
         const getTour = async () => {
@@ -31,6 +37,31 @@ function Tour() {
             setActiveIndexes(activeIndexes.filter((i) => i !== index));
         } else {
             setActiveIndexes([...activeIndexes, index]);
+        }
+    };
+
+    const handleBookClick = () => {
+        setShowPaymentBox(true);
+    };
+
+    const handlePayment = async () => {
+
+        try {
+            const paymentRequest = {
+                orderType: 'TRAVEL',
+                matour: tour.id, 
+                orderDescription: `Thanh toán tour ${tour.tentour}`,
+                name: user?.result?.tendangnhap || user?.result?.email,
+            };
+            console.log('paymentRequest', tour);
+            const res = await createPayment(paymentRequest);
+            if (res.paymentUrl) {
+                window.location.href = res.paymentUrl; // Chuyển hướng sang trang thanh toán VNPAY
+            } else {
+                alert('Không lấy được link thanh toán!');
+            }
+        } catch (error) {
+            alert('Thanh toán thất bại!');
         }
     };
 
@@ -77,10 +108,28 @@ function Tour() {
                             theme="theme1"
                             className={styles.bookBtn}
                             style={{ marginLeft: 16 }}
+                            onClick={handleBookClick}
                         >
                             Đặt tour
                         </Button>
                     </div>
+                    {/* Hiện ô thanh toán khi click Đặt tour */}
+                    {showPaymentBox && (
+                        <div className={styles.paymentBox}>
+                            <h3>Xác nhận đặt tour</h3>
+                            <p>Bạn có chắc chắn muốn thanh toán tour này?</p>
+                            <Button theme="theme2" onClick={handlePayment}>
+                                Thanh toán
+                            </Button>
+                            <Button
+                                style={{ marginLeft: 8 }}
+                                onClick={() => setShowPaymentBox(false)}
+                                theme={'theme3'}
+                            >
+                                Hủy
+                            </Button>
+                        </div>
+                    )}
                     <br />
                     <div className={styles.experience}>
                         <h2 className={styles.title}>

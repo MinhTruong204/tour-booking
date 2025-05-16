@@ -75,7 +75,7 @@ const RegisterForm = () => {
             <form className={styles.form} onSubmit={handleSubmit}>
                 <h2 className={styles.title}>Đăng ký</h2>
                 <div className={styles.inputGroup}>
-                    <label>Email</label>
+                    <label>Email <strong style={{color: "red"}}>*</strong>      </label>
                     <input
                         type="email"
                         name="email"
@@ -85,9 +85,9 @@ const RegisterForm = () => {
                     />
                 </div>
                 <div className={styles.inputGroup}>
-                    <label>Họ tên</label>
+                    <label>Họ tên <strong style={{color: "red"}}>*</strong></label>
                     <input
-                        type="text"
+                        type="text" 
                         name="tendangnhap"
                         value={formData.tendangnhap}
                         onChange={handleChange}
@@ -95,7 +95,7 @@ const RegisterForm = () => {
                     />
                 </div>
                 <div className={styles.inputGroup}>
-                    <label>Địa chỉ</label>
+                    <label>Địa chỉ <strong style={{color: "red"}}>*</strong></label>
                     <input
                         type="text"
                         name="diachi"
@@ -105,7 +105,7 @@ const RegisterForm = () => {
                     />
                 </div>
                 <div className={styles.inputGroup}>
-                    <label>Số điện thoại</label>
+                    <label>Số điện thoại <strong style={{color: "red"}}>*</strong></label>
                     <input
                         type="tel"
                         name="sodienthoai"
@@ -115,7 +115,7 @@ const RegisterForm = () => {
                     />
                 </div>
                 <div className={styles.inputGroup}>
-                    <label>Ngày sinh</label>
+                    <label>Ngày sinh <strong style={{color: "red"}}>*</strong></label>
                     <input
                         type="date"
                         name="ngaysinh"
@@ -125,7 +125,7 @@ const RegisterForm = () => {
                     />
                 </div>
                 <div className={styles.inputGroup}>
-                    <label>Mật khẩu</label>
+                    <label>Mật khẩu <strong style={{color: "red"}}>*</strong></label>
                     <input
                         type="password"
                         name="password"

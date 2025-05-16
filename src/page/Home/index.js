@@ -14,6 +14,9 @@ import khanh from '../../assets/images/members/khanh.jpg';
 import minh from '../../assets/images/members/minh.jpg';
 import phu from '../../assets/images/members/phu.jpg';
 import thuc from '../../assets/images/members/thuc.jpg';
+import mquan from '../../assets/images/members/mquan.JPG';
+import thanh from '../../assets/images/members/thanh.jpg';
+import quy from '../../assets/images/members/quy.jpg';
 import { Link } from 'react-router-dom';
 const bannerImgs = [banner1, banner2, banner3];
 const members = [
@@ -22,6 +25,9 @@ const members = [
     { avatar: minh, name: 'Minh' },
     { avatar: phu, name: 'Phu' },
     { avatar: thuc, name: 'Thuc' },
+    { avatar: mquan, name: 'MQuan' },
+    { avatar: quy, name: 'Quy' },
+    { avatar: thanh, name: 'Thanh' },
 ];
 
 function Home() {

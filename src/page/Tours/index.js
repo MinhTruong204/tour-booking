@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Banner from '../../components/layouts/Banner';
 import styles from './Tours.module.scss';
 import bannerimg from '../../assets/images/danhsachtour-banner.jpg';
@@ -79,45 +80,55 @@ function Tours() {
                         <div>Loading...</div>
                     ) : (
                         tours.map((tour) => (
-                            <div className={styles.tourCard} key={tour.id}>
-                                <div className={styles.tourImageWrapper}>
-                                    <img
-                                        src={tour.anhminhhoa}
-                                        alt={tour.tentour}
-                                        className={styles.tourImage}
-                                    />
-                                    <div className={styles.priceTag}>
-                                        {tour.giaban
-                                            ? `$${(tour.giaban / 23000).toFixed(
-                                                  0,
-                                              )}`
-                                            : '$--'}
-                                        <span className={styles.priceUnit}>
-                                            / person
-                                        </span>
+                            <Link
+                                to={`/tour/${tour.id}`}
+                                key={tour.id}
+                                className={styles.tourCardLink}
+                                style={{
+                                    textDecoration: 'none',
+                                    color: 'inherit',
+                                }}
+                            >
+                                <div className={styles.tourCard}>
+                                    <div className={styles.tourImageWrapper}>
+                                        <img
+                                            src={tour.anhminhhoa}
+                                            alt={tour.tentour}
+                                            className={styles.tourImage}
+                                        />
+                                        <div className={styles.priceTag}>
+                                            {tour.giaban
+                                                ? `$${(
+                                                      tour.giaban / 23000
+                                                  ).toFixed(0)}`
+                                                : '$--'}
+                                            <span className={styles.priceUnit}>
+                                                / person
+                                            </span>
+                                        </div>
+                                        <div className={styles.featured}>
+                                            FEATURED
+                                        </div>
+                                        <div className={styles.tourIcons}>
+                                            <i className="fa-solid fa-video"></i>
+                                            <i className="fa-solid fa-camera"></i>
+                                        </div>
                                     </div>
-                                    <div className={styles.featured}>
-                                        FEATURED
-                                    </div>
-                                    <div className={styles.tourIcons}>
-                                        <i className="fa-solid fa-video"></i>
-                                        <i className="fa-solid fa-camera"></i>
+                                    <div className={styles.tourContent}>
+                                        <div className={styles.tourName}>
+                                            {tour.tentour}
+                                        </div>
+                                        <div className={styles.tourLocation}>
+                                            <i className="fa-solid fa-location-dot"></i>
+                                            {tour.tinhthanh}, {tour.khuvuc}
+                                        </div>
+                                        <button className={styles.bookBtn}>
+                                            Book Now{' '}
+                                            <i className="fa-solid fa-arrow-right"></i>
+                                        </button>
                                     </div>
                                 </div>
-                                <div className={styles.tourContent}>
-                                    <div className={styles.tourName}>
-                                        {tour.tentour}
-                                    </div>
-                                    <div className={styles.tourLocation}>
-                                        <i className="fa-solid fa-location-dot"></i>
-                                        {tour.tinhthanh}, {tour.khuvuc}
-                                    </div>
-                                    <button className={styles.bookBtn}>
-                                        Book Now{' '}
-                                        <i className="fa-solid fa-arrow-right"></i>
-                                    </button>
-                                </div>
-                            </div>
+                            </Link>
                         ))
                     )}
                 </main>

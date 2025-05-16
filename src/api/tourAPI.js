@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://192.168.1.30:8080/QuanLyDuLich'; //http://172.17.4.109:8080/QuanLyDuLich http://localhost:5000
+const API_BASE_URL = 'http://192.168.3.168:8080/QuanLyDuLich'; //http://172.17.4.109:8080/QuanLyDuLich http://localhost:5000
 
 export const fetchTours = async () => {
     try {
@@ -33,3 +33,4 @@ export const fetchTourById = async (id) => {
         throw error;
     }
 };
+
